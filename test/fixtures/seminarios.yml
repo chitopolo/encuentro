@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nombre: MyString
+  hora: 2013-03-12 16:16:00
+  category: MyString
+  obligatory: false
+
+two:
+  nombre: MyString
+  hora: 2013-03-12 16:16:00
+  category: MyString
+  obligatory: false

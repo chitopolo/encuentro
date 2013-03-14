@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre:</b>
+  <%= @seminario.nombre %>
+</p>
+
+<p>
+  <b>Hora:</b>
+  <%= @seminario.hora %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @seminario.category %>
+</p>
+
+<p>
+  <b>Obligatory:</b>
+  <%= @seminario.obligatory %>
+</p>
+
+
+<%= link_to 'Edit', edit_seminario_path(@seminario) %> |
+<%= link_to 'Back', seminarios_path %>

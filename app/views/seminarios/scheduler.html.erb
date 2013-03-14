@@ -1,0 +1,19 @@
+ <%= javascript_include_tag "application" %>
+
+<div class = "container">
+<h1>Listing seminarios</h1>
+
+<table class="table">
+
+<% @seminarios.each do |seminario| %>
+  <div class = "row-fluid">
+    <div class = "span4 btn disabled btn-success"><%= seminario.nombre %></div>
+    <div class = "span2 btn disabled btn-info"><%= seminario.hora %></div>
+    <div class = "span2 btn disabled btn-danger"><%= seminario.category %></div>
+    <div class = "span1"><%= seminario.obligatory %></div>
+    <div class = "span1"><%= link_to 'Show', seminario %></div>
+    </div>
+<% end %>
+</table>
+
+</div>

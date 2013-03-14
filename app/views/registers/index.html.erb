@@ -1,0 +1,61 @@
+ <%= javascript_include_tag "application" %>
+<h1>Listing registers</h1>
+
+<table class = "table">
+  <tr>
+    <th>Nombre</th>
+    <th>Apat</th>
+    <th>Amat</th>
+    <th>Carrera</th>
+    <th>Nivel</th>
+    <th>Email</th>
+    <th>Ci</th>
+    <th>Ciudad</th>
+    <th>Direccion</th>
+    <th>Zona</th>
+    <th>Telefonos</th>
+    <th>Celular</th>
+    <th>Otro</th>
+    <th>Salud</th>
+    <th>Asistencia</th>
+    <th>Apoderado</th>
+    <th>Parentesco</th>
+    <th>Telefonoapoderado</th>
+    <th>Direccionapoderado</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @registers.each do |register| %>
+  <tr>
+    <td><%= register.nombre %></td>
+    <td><%= register.apat %></td>
+    <td><%= register.amat %></td>
+    <td><%= register.carrera %></td>
+    <td><%= register.nivel %></td>
+    <td><%= register.email %></td>
+    <td><%= register.ci %></td>
+    <td><%= register.ciudad %></td>
+    <td><%= register.direccion %></td>
+    <td><%= register.zona %></td>
+    <td><%= register.telefonos %></td>
+    <td><%= register.celular %></td>
+    <td><%= register.otro %></td>
+    <td><%= register.salud %></td>
+    <td><%= register.apoderado %></td>
+    <td><%= register.parentesco %></td>
+    <td><%= register.telefonoapoderado %></td>
+    <td><%= register.direccionapoderado %></td>
+    <td><%= link_to 'Show', register %></td>
+    <td><%= link_to 'Edit', edit_register_path(register) %></td>
+    <td><%= link_to 'Destroy', register, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Register', new_register_path %>
+
+
