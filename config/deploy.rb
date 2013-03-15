@@ -1,6 +1,7 @@
+
 require "bundler/capistrano"
 
-server "198.211.107.184", :web, :app, :db, primary: true
+server "198.211.110.12", :web, :app, :db, primary: true
 
 set :application, "encuentro13"
 set :user, "chitopolo"
@@ -9,7 +10,7 @@ set :deploy_via, :remote_cache
 set :use_sudo, false
 
 set :scm, "git"
-set :repository, "https://github.com/chitopolo/encuentro.git"
+set :repository, "git@github.com:chitopolo/encuentro.git"
 set :branch, "master"
 
 default_run_options[:pty] = true
