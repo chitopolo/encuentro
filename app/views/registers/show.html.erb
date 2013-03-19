@@ -1,95 +1,55 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Register -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
+</div>
 
-<p>
-  <b>Nombre:</b>
-  <%= @register.nombre %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:nombre) %>:</strong></dt>
+  <dd><%= @register.nombre %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:apat) %>:</strong></dt>
+  <dd><%= @register.apat %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:amat) %>:</strong></dt>
+  <dd><%= @register.amat %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:carrera) %>:</strong></dt>
+  <dd><%= @register.carrera %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:nivel) %>:</strong></dt>
+  <dd><%= @register.nivel %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @register.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ci) %>:</strong></dt>
+  <dd><%= @register.ci %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ciudad) %>:</strong></dt>
+  <dd><%= @register.ciudad %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccion) %>:</strong></dt>
+  <dd><%= @register.direccion %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:zona) %>:</strong></dt>
+  <dd><%= @register.zona %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefonos) %>:</strong></dt>
+  <dd><%= @register.telefonos %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:celular) %>:</strong></dt>
+  <dd><%= @register.celular %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:otro) %>:</strong></dt>
+  <dd><%= @register.otro %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:salud) %>:</strong></dt>
+  <dd><%= @register.salud %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:apoderado) %>:</strong></dt>
+  <dd><%= @register.apoderado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:parentesco) %>:</strong></dt>
+  <dd><%= @register.parentesco %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:telefonoapoderado) %>:</strong></dt>
+  <dd><%= @register.telefonoapoderado %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:direccionapoderado) %>:</strong></dt>
+  <dd><%= @register.direccionapoderado %></dd>
+</dl>
 
-<p>
-  <b>Apat:</b>
-  <%= @register.apat %>
-</p>
-
-<p>
-  <b>Amat:</b>
-  <%= @register.amat %>
-</p>
-
-<p>
-  <b>Carrera:</b>
-  <%= @register.carrera %>
-</p>
-
-<p>
-  <b>Nivel:</b>
-  <%= @register.nivel %>
-</p>
-
-<p>
-  <b>Email:</b>
-  <%= @register.email %>
-</p>
-
-<p>
-  <b>Ci:</b>
-  <%= @register.ci %>
-</p>
-
-<p>
-  <b>Ciudad:</b>
-  <%= @register.ciudad %>
-</p>
-
-<p>
-  <b>Direccion:</b>
-  <%= @register.direccion %>
-</p>
-
-<p>
-  <b>Zona:</b>
-  <%= @register.zona %>
-</p>
-
-<p>
-  <b>Telefonos:</b>
-  <%= @register.telefonos %>
-</p>
-
-<p>
-  <b>Celular:</b>
-  <%= @register.celular %>
-</p>
-
-<p>
-  <b>Otro:</b>
-  <%= @register.otro %>
-</p>
-
-<p>
-  <b>Salud:</b>
-  <%= @register.salud %>
-</p>
-
-<p>
-  <b>Apoderado:</b>
-  <%= @register.apoderado %>
-</p>
-
-<p>
-  <b>Parentesco:</b>
-  <%= @register.parentesco %>
-</p>
-
-<p>
-  <b>Telefonoapoderado:</b>
-  <%= @register.telefonoapoderado %>
-</p>
-
-<p>
-  <b>Direccionapoderado:</b>
-  <%= @register.direccionapoderado %>
-</p>
-
-
-<%= link_to 'Edit', edit_register_path(@register) %> |
-<%= link_to 'Back', registers_path %>
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              registers_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_register_path(@register), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              register_path(@register),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>
+</div>

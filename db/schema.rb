@@ -13,15 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20130314134151) do
 
-  create_table "programas", :force => true do |t|
-    t.text     "name"
-    t.datetime "time"
-    t.string   "category"
-    t.boolean  "obligatory"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "registers", :force => true do |t|
     t.string   "nombre"
     t.string   "apat"

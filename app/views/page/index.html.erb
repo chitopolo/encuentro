@@ -1,41 +1,19 @@
 <!--start: Container -->
     	<div class="container">
 			
-			<!-- start: Flexslider -->
-			<div class="slider">
-			
-				<div id="flex1" class="flexslider">
-					<ul class="slides">
+<div id="myCarousel" class="carousel">
+  <!-- Carousel items -->
+<div class="carousel-inner">
+    <div class="active item"><img src="<%= asset_path( 'imgbig1.jpg') %>" alt="" /></div>
+    <div class="item"><img src="<%= asset_path( 'tarijafoto2.jpg') %>" alt="" /></div>
+    <div class="item"><img src="<%= asset_path( 'tarijafoto1.jpg') %>" alt="" /></div>
+    
+  </div>
+  <!-- Carousel nav -->
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+</div>
 
-						<li>
-							<img src="<%= asset_path( 'imgbig1.jpg') %>" alt="" />
-							<div class="slide-caption n hidden-phone">
-								<h3>Encuentro Tarija 2013</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-								</p>
-							</div>
-						</li>
-
-						<li>
-							<img src="<%= asset_path( 'tarijafoto2.jpg') %>" alt="" />
-							<div class="slide-caption hidden-phone">
-								<h3>This is a caption</h3>
-								<p>
-									Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-								</p>
-							</div>
-						</li>
-
-						<li>
-							<img src="<%= asset_path( 'tarijafoto1.jpg') %>" alt="" />
-						</li>
-
-					</ul>
-				</div>
-			
-			</div>
-			<!-- end: Flexslider -->
 			
 			<hr>
 	

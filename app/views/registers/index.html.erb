@@ -1,61 +1,70 @@
- <%= javascript_include_tag "application" %>
-<h1>Listing registers</h1>
-
-<table class = "table">
-  <tr>
-    <th>Nombre</th>
-    <th>Apat</th>
-    <th>Amat</th>
-    <th>Carrera</th>
-    <th>Nivel</th>
-    <th>Email</th>
-    <th>Ci</th>
-    <th>Ciudad</th>
-    <th>Direccion</th>
-    <th>Zona</th>
-    <th>Telefonos</th>
-    <th>Celular</th>
-    <th>Otro</th>
-    <th>Salud</th>
-    <th>Asistencia</th>
-    <th>Apoderado</th>
-    <th>Parentesco</th>
-    <th>Telefonoapoderado</th>
-    <th>Direccionapoderado</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @registers.each do |register| %>
-  <tr>
-    <td><%= register.nombre %></td>
-    <td><%= register.apat %></td>
-    <td><%= register.amat %></td>
-    <td><%= register.carrera %></td>
-    <td><%= register.nivel %></td>
-    <td><%= register.email %></td>
-    <td><%= register.ci %></td>
-    <td><%= register.ciudad %></td>
-    <td><%= register.direccion %></td>
-    <td><%= register.zona %></td>
-    <td><%= register.telefonos %></td>
-    <td><%= register.celular %></td>
-    <td><%= register.otro %></td>
-    <td><%= register.salud %></td>
-    <td><%= register.apoderado %></td>
-    <td><%= register.parentesco %></td>
-    <td><%= register.telefonoapoderado %></td>
-    <td><%= register.direccionapoderado %></td>
-    <td><%= link_to 'Show', register %></td>
-    <td><%= link_to 'Edit', edit_register_path(register) %></td>
-    <td><%= link_to 'Destroy', register, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+<%- model_class = Register -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:nombre) %></th>
+      <th><%= model_class.human_attribute_name(:apat) %></th>
+      <th><%= model_class.human_attribute_name(:amat) %></th>
+      <th><%= model_class.human_attribute_name(:carrera) %></th>
+      <th><%= model_class.human_attribute_name(:nivel) %></th>
+      <th><%= model_class.human_attribute_name(:email) %></th>
+      <th><%= model_class.human_attribute_name(:ci) %></th>
+      <th><%= model_class.human_attribute_name(:ciudad) %></th>
+      <th><%= model_class.human_attribute_name(:direccion) %></th>
+      <th><%= model_class.human_attribute_name(:zona) %></th>
+      <th><%= model_class.human_attribute_name(:telefonos) %></th>
+      <th><%= model_class.human_attribute_name(:celular) %></th>
+      <th><%= model_class.human_attribute_name(:otro) %></th>
+      <th><%= model_class.human_attribute_name(:salud) %></th>
+      <th><%= model_class.human_attribute_name(:apoderado) %></th>
+      <th><%= model_class.human_attribute_name(:parentesco) %></th>
+      <th><%= model_class.human_attribute_name(:telefonoapoderado) %></th>
+      <th><%= model_class.human_attribute_name(:direccionapoderado) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @registers.each do |register| %>
+      <tr>
+        <td><%= link_to register.id, register_path(register) %></td>
+        <td><%= register.nombre %></td>
+        <td><%= register.apat %></td>
+        <td><%= register.amat %></td>
+        <td><%= register.carrera %></td>
+        <td><%= register.nivel %></td>
+        <td><%= register.email %></td>
+        <td><%= register.ci %></td>
+        <td><%= register.ciudad %></td>
+        <td><%= register.direccion %></td>
+        <td><%= register.zona %></td>
+        <td><%= register.telefonos %></td>
+        <td><%= register.celular %></td>
+        <td><%= register.otro %></td>
+        <td><%= register.salud %></td>
+        <td><%= register.apoderado %></td>
+        <td><%= register.parentesco %></td>
+        <td><%= register.telefonoapoderado %></td>
+        <td><%= register.direccionapoderado %></td>
+        <td><%=l register.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_register_path(register), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      register_path(register),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
 </table>
 
-<br />
-
-<%= link_to 'New Register', new_register_path %>
-
-
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_register_path,
+            :class => 'btn btn-primary' %>

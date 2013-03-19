@@ -1,92 +1,116 @@
-<%= form_for(@register) do |f| %>
-  <% if @register.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@register.errors.count, "error") %> prohibited this register from being saved:</h2>
-
-      <ul>
-      <% @register.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @register, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :nombre, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nombre, :class => 'text_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :apat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :apat, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :amat, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :amat, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :carrera, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :carrera, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :nivel, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nivel, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ci, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ci, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ciudad, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :ciudad, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccion, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccion, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :zona, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :zona, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefonos, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefonos, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :celular, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :celular, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :otro, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :otro, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :salud, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :salud, :class => 'text_area' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :apoderado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :apoderado, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :parentesco, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :parentesco, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :telefonoapoderado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :telefonoapoderado, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :direccionapoderado, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :direccionapoderado, :class => 'text_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    
-    <%= f.text_field :nombre, :placeholder => "Nombre" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :apat, :placeholder => "Apellido Paterno" %>
-  </div>
-  <div class="field">
-    <%= f.text_field :amat, :placeholder => "Apellido Materno"  %>
-  </div>
-  <div class="field">
-
-    <%= f.text_field :carrera, :placeholder => "Carrera que estudias"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :nivel, :placeholder => "Nivel"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :email, :placeholder => "Email"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :ci, :placeholder => "Tu carnet de identidad"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :ciudad, :placeholder => "Ciudad"  %>
-  </div>
-  <div class="field">
-   <%= f.text_field :direccion, :placeholder => "Tu dirección"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :zona, :placeholder => "Zona"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :telefonos, :placeholder => "Tu telefono"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :celular, :placeholder => "Tu Celular"  %>
-  </div>
-  <div class="field">
-   <%= f.text_field :otro, :placeholder => "Algun otro numero"  %>
-  </div>
-  <div class="field">
-    <%= f.text_area :salud, :placeholder => "Tienes algun problema de salud, describelo aqui."  %>
-  </div>
-  <div class="field">
-   <%= f.text_field :apoderado, :placeholder => "Apoderado"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :parentesco, :placeholder => "Parentesco"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :telefonoapoderado, :placeholder => "Telefono Apoderado"  %>
-  </div>
-  <div class="field">
-    <%= f.text_field :direccionapoderado, :placeholder => "Direccion del apoderado"  %>
-  </div>
-
-
-
-
-<% for seminario in Seminario.find(:all) %>
-        <div>
-                <%= check_box_tag  "register[seminario_ids][]", seminario.id, @register.seminarios.include?(seminario)  %>
-                <%= seminario.nombre %>
-        </div>
-   <% end %>
-
-
-
-
-  <div class="actions">
-    <%= f.submit :class => "btn btn-success"%>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                registers_path, :class => 'btn' %>
   </div>
 <% end %>
-
-
-
-
-
